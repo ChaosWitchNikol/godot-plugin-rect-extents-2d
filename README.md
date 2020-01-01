@@ -1,1 +1,1 @@
-# godot-plugin-rect-extents-2d
+# Rect Extents 2D

@@ -6,7 +6,6 @@ const Anchor = preload("res://addons/rect_extents_2D/Anchor.gd")
 
 
 
-
 var rect_extents : RectExtents2D
 var anchors : Array
 var dragged_anchor : Anchor
@@ -15,11 +14,6 @@ var drag_start : Dictionary = {
 	'size': Vector2(),
 }
 
-
-const CIRCLE_RADIUS : float = 6.0
-const STROKE_RADIUS : float = 2.0
-const STROKE_COLOR = Color("#f50956")
-const FILL_COLOR = Color("#ffffff")
 
 
 #== node ==
@@ -70,20 +64,12 @@ func forward_canvas_draw_over_viewport(overlay: Control) -> void:
 	anchors = []
 	
 	# add all corners anchors
-	var anchor_size : Vector2 = Vector2.ONE * CIRCLE_RADIUS * 2.0
 	for coord in edit_anchors:
 		var anchor_center : Vector2 = transform_viewport * (transform_global * coord)
-		var new_anchor : Anchor = Anchor.new(anchor_center, anchor_size)
+		var new_anchor : Anchor = Anchor.new(anchor_center)
 		
 		new_anchor.draw(overlay, rect_extents.color)
 		anchors.append(new_anchor)
-	
-	var whole_anchor : Anchor = Anchor.new(pos, rect_extents.size)
-	whole_anchor.draw(overlay, STROKE_COLOR)
-	anchors.append(whole_anchor)
-
-
-
 
 
 func forward_canvas_gui_input(event: InputEvent) -> bool:
