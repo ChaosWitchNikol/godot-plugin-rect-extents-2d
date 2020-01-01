@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/rect_extents_2D/RectExtents2D.gd" type="Script" id=1]
+
+[node name="RectExtents2D" type="Node2D"]
+position = Vector2( 1.78188, -0.0809903 )
+script = ExtResource( 1 )
+size = Vector2( 44.4362, 38.162 )

@@ -5,7 +5,6 @@ extends Node2D
 
 export(Color) var color : Color = Color("#fff") setget set_color
 export(Vector2) var size : Vector2 = Vector2(10, 10) setget set_size
-export(Vector2) var offset : Vector2 = Vector2() setget set_offset
 
 
 var _rect : Rect2
@@ -20,8 +19,7 @@ func _draw() -> void:
 
 #== functions ==
 func _recalculate_rect() -> void:
-	_rect = Rect2(size / -2 + offset, size)
-
+	_rect = Rect2(size / -2.0, size)
 
 
 #== setters ==
@@ -35,8 +33,3 @@ func set_size(value : Vector2) -> void:
 	_recalculate_rect()
 	update()
 
-
-func set_offset(value : Vector2) -> void:
-	offset = value
-	_recalculate_rect()
-	update()
