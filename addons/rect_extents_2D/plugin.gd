@@ -84,7 +84,7 @@ func forward_canvas_gui_input(event: InputEvent) -> bool:
 					continue
 				dragged_anchor = anchor
 				print("Drag start: %s" % dragged_anchor)
-				drag_start.size = rect_extents.size
+				drag_start = { 'size': rect_extents.size }
 				return true
 		elif dragged_anchor and not event.is_pressed():
 			drag_to(event.position)
