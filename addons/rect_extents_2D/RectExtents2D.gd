@@ -1,13 +1,19 @@
 tool
 extends Node2D
 
-export(Color) var color : Color = Color("#36a1ff") setget set_color
+const Consts := preload("res://addons/rect_extents_2D/Consts.gd")
+
+export(Color) var color : Color = Consts.COLOR_DEFAULT setget set_color
 export(Vector2) var size : Vector2 = Vector2(64, 64) setget set_size
 
 
 var _rect : Rect2
 
 #== node ==
+func _ready() -> void:
+	_recalculate_rect()
+	update()
+
 func _draw() -> void:
 	if not Engine.editor_hint:
 		return
