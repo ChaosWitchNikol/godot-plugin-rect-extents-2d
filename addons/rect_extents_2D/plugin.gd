@@ -18,7 +18,7 @@ var drag_start : Dictionary = {
 
 #== node ==
 func _enter_tree() -> void:
-	add_custom_type("RectExtents2D", "Node2D", preload("RectExtents2D.gd"), null)
+	add_custom_type("RectExtents2D", "Node2D", preload("RectExtents2D.gd"), preload("icon.svg"))
 
 func _exit_tree() -> void:
 	remove_custom_type("RectExtents2D")

@@ -1,10 +1,7 @@
 tool
 extends Node2D
 
-const Consts := preload("res://addons/rect_extents_2D/Consts.gd")
-
-
-export(Color) var color : Color = Consts.COLOR_DEFAULT setget set_color
+export(Color) var color : Color = Color("#36a1ff") setget set_color
 export(Vector2) var size : Vector2 = Vector2(64, 64) setget set_size
 
 
